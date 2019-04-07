@@ -53,13 +53,18 @@ class calculator {
         exit(1)
     }
     
+    // Iterates through array and finds operators
     func findPriorityOperators(args: inout [String]) -> [String] {
         
         var index = 0
         var result: Int = 0
+        // Each case has 5 steps:
+        // 1. validate both numbers for the operation
+        // 2. perform the operation and store result on a variable
+        // 3. save result on the first number of the operation
+        // 4. Remove both operator and B number of the operation
+        // 5. jump back one number to continue iterating
         while index < args.count {
-            // validate both integers
-            
             switch args[index] {
             case "x":
                 errorHandler.checkNumbers(a: args[index-1], b: args[index+1])
@@ -105,8 +110,13 @@ class calculator {
         var index = 1
         var result: Int = 0
         
+        // Each case has 5 steps:
+        // 1. validate both numbers for the operation
+        // 2. perform the operation and store result on a variable
+        // 3. save result on the first number of the operation
+        // 4. Remove both operator and B number of the operation
+        // 5. jump back one number to continue iterating
         while index < args.count {
-            // validate both integers
             switch args[index] {
             case "+":
                 errorHandler.checkNumbers(a: args[index-1], b: args[index+1])

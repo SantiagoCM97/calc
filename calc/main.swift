@@ -16,7 +16,11 @@ args.removeFirst() // remove the name of the program
 
 //check for wrong expression syntax with an operator at args[0]
 calc.validateExpression(args: args)
+
+// Calculate high priority operators (*,/,%)
 args = calc.findPriorityOperators(args: &args)
+
+// Calculate sum operators (+,-)
 args = calc.findSumOperators(args: &args)
 
 print(Int(args[0])!)
